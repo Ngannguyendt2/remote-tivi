@@ -1,18 +1,39 @@
 let Remote = function () {
-    this.codeChanel = [0,1,2,3,4,5,6,7,8];
-    this.getchangeChanel = function () {
-        return this.codeChanel;
+    this.turnOn = function (tivi) {
+        if(tivi.getOnoff())
+        {
+            tivi.setOnoff(false);
+        }
+        else{
+            tivi.setOnoff(true);
+        }
+
+        document.getElementById('statusTivi').innerHTML = tivi.getOnoff();
+
     };
 
-    this.setChangechanel = function (code) {
-        this.codeChanel = code;
+    this.controlChanel = function (tv) {
+        let chanel=document.getElementById('chanel').value;
+        tv.setChanel(chanel);
+        document.getElementById('chanelTivi').innerHTML = tivi.getChanel();
+
     };
 
-    this.getVolum = function () {
-        return this.volum;
+    this.controlVolumDecrease = function (tv) {
+        if (tv.getvolum() > 0) {
+            tv.setvolum(tv.getvolum() - 1);
+            document.getElementById('volumTivi').innerHTML=tivi.getvolum();
+        } else {
+            tv.setvolum(0);
+        }
     };
 
-    this.setVolum = function (volum) {
-        this.volum = volum;
-    }
-}
+    this.controlVolumRaise = function (tv) {
+        if (tv.getvolum() < 50) {
+            tv.setvolum(tv.getvolum() + 1);
+            document.getElementById('volumTivi').innerHTML=tivi.getvolum();
+        } else {
+            tv.setvolum(50);
+        }
+    };
+};

@@ -9,6 +9,7 @@ let Tivi = function () {
 
     this.setChanel = function (chanel) {
         this.chanel = chanel;
+
     };
 
     this.getvolum = function () {
@@ -19,25 +20,13 @@ let Tivi = function () {
         this.volum = volum;
     };
 
-    this.checkOnoff = function (isOnoff) {
-        if (isOnoff) {
-            this.isOnoff = true;
-            alert("Tivi is on");
-        } else {
-            this.isOnoff = false;
-            alert("Tivi is off");
-        }
+    this.getOnoff = function () {
+        return this.isOnoff;
     };
 
-    this.turnOnOff=function () {
-        if(this.isOnoff==false)
-        {
-            alert("Tivi already");
-        }
-        else {
-            alert("Tivi turn off");
-        }
-    };
+    this.setOnoff = function (isOnoff) {
+        this.isOnoff = isOnoff;
+    }
 
 
 };
