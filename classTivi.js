@@ -1,5 +1,6 @@
-let Tivi = function () {
-    this.chanel = ['vtv1', 'vtv2', 'vtv3', 'vtv4', 'vtv5', 'vtv6', 'htv7', 'htv9'];
+let Tivi = function (chanel) {
+    this.arrchanel = ['vtv1', 'vtv2', 'vtv3', 'vtv4', 'vtv5', 'vtv6', 'htv7', 'htv9'];
+    this.chanel = chanel;
     this.volum = 10;
     this.isOnoff = false;
 
@@ -8,7 +9,12 @@ let Tivi = function () {
     };
 
     this.setChanel = function (chanel) {
-        this.chanel = chanel;
+        for (let i = 0; i < this.arrchanel.length; i++) {
+            if (chanel == (i + 1)) {
+                this.chanel = this.arrchanel[i];
+                break;
+            }
+        }
 
     };
 
